@@ -4,11 +4,11 @@ using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
 
-namespace ConsoleApp1
+namespace AdventOfCode._2020
 {
     public static class Problem2
     {
-        public static void Execute()
+        public static void Part1()
         {
             int matches = 0;
             foreach (var line in File.ReadAllLines("input.txt"))
@@ -26,7 +26,7 @@ namespace ConsoleApp1
             Console.WriteLine(matches);
         }
 
-        public static void ExecuteB()
+        public static void Part2()
         {
             int matches = 0;
             foreach (var line in File.ReadAllLines("input.txt"))

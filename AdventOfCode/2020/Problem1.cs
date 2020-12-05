@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
-namespace ConsoleApp1
+namespace AdventOfCode._2020
 {
     public static class Problem1
     {
-        public static void Execute()
+        public static void Part1()
         {
             HashSet<int> numbers = new HashSet<int>();
             foreach (var line in File.ReadAllLines("input.txt").Select(line => Convert.ToInt32(line)))
@@ -21,7 +21,7 @@ namespace ConsoleApp1
             }
         }
 
-        public static void ExecuteB()
+        public static void Part2()
         {
             var arr = File.ReadAllLines("input.txt").Select(line => Convert.ToInt32(line)).OrderBy(a => a).ToArray(); // naive solution here.
             for (int i = 0; i < arr.Length; i++)

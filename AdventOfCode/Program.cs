@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
-namespace ConsoleApp1
+namespace AdventOfCode
 {
     class Program
     {         
         static void Main(string[] args)
         {
-            Problem2.ExecuteB();
+            _2020.Problem5.Part2();
         }
     }
 }
