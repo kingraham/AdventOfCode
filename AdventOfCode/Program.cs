@@ -9,7 +9,7 @@ namespace AdventOfCode
     {         
         static void Main(string[] args)
         {
-            _2019.Problem6.Part2();
+            _2020.Problem7.Part1();
         }
     }
 }
