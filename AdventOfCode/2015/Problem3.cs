@@ -5,8 +5,6 @@ namespace AdventOfCode._2015
 {
     public class Problem3
     {
-       
-
         public static void Part1()
         {
             var houses = new HashSet<(int x, int y)>();
@@ -17,7 +15,7 @@ namespace AdventOfCode._2015
             houses.Add((x, y));
 
             string instruction = Helpers.GetInput()[0];
-           
+
             foreach (var c in instruction)
             {
                 int nextX = x;
@@ -31,7 +29,7 @@ namespace AdventOfCode._2015
                     nextX += 1;
                 else if (c == '<')
                     nextX -= 1;
-                
+
                 houses.Add((nextX, nextY));
                 x = nextX;
                 y = nextY;

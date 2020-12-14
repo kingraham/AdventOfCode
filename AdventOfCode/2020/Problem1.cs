@@ -8,38 +8,35 @@ namespace AdventOfCode._2020
     public static class Problem1
     {
         public static void Part1()
-        {
+        {            
             HashSet<int> numbers = new HashSet<int>();
-            foreach (var line in File.ReadAllLines("input.txt").Select(line => Convert.ToInt32(line)))
-            {
-                if (numbers.Contains(2020 - line))
+
+            Helpers.GetInput().Select(line => Convert.ToInt32(line))
+                .Aggregate(new HashSet<int>(), (set, a) =>
                 {
-                    Console.WriteLine(line * (2020 - line));
-                    break;
-                }
-                numbers.Add(line);
-            }
+                    if (set.Contains(2020 - a))
+                        Console.WriteLine(a * (2020 - a));
+                    set.Add(a);
+                    return set;
+                });                      
         }
 
+        // 162292410
         public static void Part2()
         {
-            var arr = File.ReadAllLines("input.txt").Select(line => Convert.ToInt32(line)).OrderBy(a => a).ToArray(); // naive solution here.
-            for (int i = 0; i < arr.Length; i++)
-            {
-                var first = arr[i];
-                for (int j = i + 1; j < arr.Length; j++)
-                {
-                    var second = arr[j];
-                    for (int k = j + 1; k < arr.Length; k++)
-                    {
-                        var third = arr[k];
-                        if (first + second + third == 2020)
-                        {
-                            Console.WriteLine($"{first} {second} {third}");
-                            Console.WriteLine(first * second * third);
+            var a = Helpers.GetInput().Select(a => Convert.ToInt32(a)).OrderBy(a => a).ToArray(); // naive solution here.
+            for (int i = 0; i < a.Length; i++)
+            {                
+                for (int j = i + 1; j < a.Length; j++)
+                {                    
+                    for (int k = j + 1; k < a.Length; k++)
+                    {                        
+                        if (a[i] + a[j] + a[k] == 2020)
+                        {                            
+                            Console.WriteLine(a[i] * a[j] * a[k]);
                             return;
                         }
-                        else if (first + second + third > 2020)
+                        else if (a[i] + a[j] + a[k] > 2020)
                             break;
                     }
                 }

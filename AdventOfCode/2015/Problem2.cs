@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AdventOfCode._2015
 {
@@ -28,7 +25,7 @@ namespace AdventOfCode._2015
                 total += area + Math.Min(area3, Math.Min(area1, area2));
             }
 
-            Console.WriteLine(total);                        
+            Console.WriteLine(total);
         }
 
         public static void Part2()
@@ -44,7 +41,7 @@ namespace AdventOfCode._2015
                 int H = split[2];
 
                 var s = new[] { L, W, H }.OrderBy(a => a).Take(2).ToArray();
-                
+
                 int length = s[0] + s[0] + s[1] + s[1] + L * W * H;
 
                 total += length;
